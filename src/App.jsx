@@ -2,12 +2,16 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 
 class App extends React.Component {
-  constructor(){
-
+  constructor(props){
+    super(props);
   }
 
   render() {
-
+    return (
+      <div>
+        <text>This is rendering!</text>
+      </div>
+    )
   }
 }
 
