@@ -3,13 +3,19 @@ import { createRoot } from 'react-dom/client'
 
 class App extends React.Component {
   constructor(props){
-    super(props);
+    super(props)
   }
 
   render() {
     return (
       <div>
-        <text>This is rendering!</text>
+        <h1 id='appTitle'>Movie Roulette</h1>
+        <h3 id='appDesc'>Find what to watch this movie night</h3>
+        <text>[Questionaire Here]</text>
+        <br></br>
+        {/* After submission of questionaire, you will be able to "roll the wheel"
+         for a movie based off of your answers */}
+        <text>[Roulette "wheel" Here]</text>
       </div>
     )
   }
