@@ -1,6 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import Questionaire from './components/Questionaire.jsx'
+import RouletteWheel from './components/RouletteWheel.jsx'
 
 class App extends React.Component {
   constructor(props){
@@ -16,7 +17,7 @@ class App extends React.Component {
         <br></br>
         {/* After submission of questionaire, you will be able to "roll the wheel"
          for a movie based off of your answers */}
-        <text>[Roulette "wheel" Here]</text>
+        <RouletteWheel />
       </div>
     )
   }
