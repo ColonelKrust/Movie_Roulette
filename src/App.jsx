@@ -6,6 +6,17 @@ import RouletteWheel from './components/RouletteWheel.jsx'
 class App extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      moviesList: []
+    }
+
+    this.updateMoviesList = this.updateMoviesList.bind(this);
+  }
+
+  updateMoviesList(moviesArray) {
+    this.setState({
+      moviesList: moviesArray
+    });
   }
 
   render() {
@@ -13,7 +24,7 @@ class App extends React.Component {
       <div>
         <h1 id='appTitle'>Movie Roulette</h1>
         <h3 id='appDesc'>Find what to watch this movie night</h3>
-        <Questionaire />
+        <Questionaire updateMoviesList={(array) => this.updateMoviesList(array)}/>
         <br></br>
         {/* After submission of questionaire, you will be able to "roll the wheel"
          for a movie based off of your answers */}

@@ -5,6 +5,7 @@ const app = express();
 require('dotenv').config();
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, './dist')));
 
 /* get all movies that fit the questionaire criteria 
 from streaming-availability-api */
@@ -12,7 +13,30 @@ from streaming-availability-api */
 app.get('/getMovies', (req, res) => {
     const inputServices = req.query.services;
     const inputCountry = req.query.country || 'us';
-    const inputGenres = req.query.genres;
+    const genreCodes = {
+        'Adventure': '12',
+        'Fantasy': '14',
+        'Animation': '16',
+        'Drama': '18',
+        'Horror': '27',
+        'Action': '28',
+        'Comedy': '35',
+        'History': '36',
+        'Western': '37',
+        'Thriller': '53',
+        'Crime': '80',
+        'Documentary': '99',
+        'Science Fiction': '878',
+        'Mystery': '9648',
+        'Music': '10402',
+        'Romance': '10749',
+        'Family': '10751',
+        'War': '10752',
+        'News': '10763',
+        'Reality': '10764',
+        'Talk Show': '10767'
+    }
+    const inputGenres = genreCodes[req.query.genres];
     let inputParams = {
         services: inputServices,
         country: inputCountry,
@@ -22,7 +46,6 @@ app.get('/getMovies', (req, res) => {
         genres_relation: 'and',
         show_type: 'movie'
     };
-    let movieList = [];
 
     if (req.query.cursor) {
         inputParams.cursor = req.query.cursor;
@@ -36,18 +59,19 @@ app.get('/getMovies', (req, res) => {
         params: inputParams
     })
     .then((response) => {
-        movieList = response.result;
+        let movieList = response.data.result;
+        
+        res.status(200).send(movieList);
     })
     .catch((err) => {
         res.status(err.status).send(err);
     });
 
-    res.status(200).send(movieList);
 });
 
 //get randomly selected movie poster art (next)
 
 
 app.listen(process.env.PORT, (req, res) => {
-    console.log(`Listening on port ${port}`);
+    console.log(`Listening on port ${process.env.PORT}`);
 });
