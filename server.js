@@ -41,7 +41,6 @@ app.get('/getMovies', (req, res) => {
         services: inputServices,
         country: inputCountry,
         output_language: 'en',
-        order_by: 'year',
         genres: inputGenres,
         genres_relation: 'and',
         show_type: 'movie'
