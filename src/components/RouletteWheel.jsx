@@ -1,22 +1,27 @@
 import React, { useState } from 'react'
 
-function RouletteWheel () {
-    const [moviesArray, setMoviesArray] = useState([]);
+function RouletteWheel (props) { 
+    if (props.moviesList.length > 0) {
+        const movies = props.moviesList
+        const movieChoice = movies[Math.floor(Math.random() * movies.length)]
 
-    function getAllMovies () {
-        /* run axios request to get all movies for above array
-         based on questionaire answers */
+        return (
+            <div id='rouletteWheel'>
+                <div id='wheel'>
+                <h2>{movieChoice.title}</h2>
+                <h4>{'Year: ' + movieChoice.year}</h4>
+                <h4>{'Overview: ' + movieChoice.overview}</h4>
+                <h4>{'Available on:' + movieChoice.streamingInfo.us.map((service) => {
+                    return ' ' + service.service
+                }).filter((service, index, servicesArray) => {
+                    return servicesArray.indexOf(service) === index
+                })}</h4>
+                </div>
+            </div>
+        )
+    } else {
+        return null
     }
-
-    return (
-        <div id='rouletteWheel'>
-            <div id='wheel'>["Wheel" of movies will spin here]</div>
-            <h2>[Movie Title]</h2>
-            <h4>Available on:</h4>
-            <h4>[Movie description]</h4>
-            <h4>[Ratings here]</h4>
-        </div>
-    )
 }
 
 export default RouletteWheel
