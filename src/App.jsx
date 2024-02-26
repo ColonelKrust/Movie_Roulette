@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      moviesList: []
+      moviesList: [],
+      chosenMovie: {}
     }
 
     this.updateMoviesList = this.updateMoviesList.bind(this);
@@ -15,7 +16,8 @@ class App extends React.Component {
 
   updateMoviesList(moviesArray) {
     this.setState({
-      moviesList: moviesArray
+      moviesList: moviesArray,
+      chosenMovie: moviesArray[Math.floor(Math.random() * moviesArray.length)]
     });
   }
 
@@ -28,7 +30,7 @@ class App extends React.Component {
         <br></br>
         {/* After submission of questionaire, you will be able to "roll the wheel"
          for a movie based off of your answers */}
-        <RouletteWheel moviesList={this.state.moviesList}/>
+        <RouletteWheel moviesList={this.state.moviesList} movieChoice={this.state.chosenMovie} />
       </div>
     )
   }

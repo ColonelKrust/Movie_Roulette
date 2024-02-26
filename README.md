@@ -6,7 +6,7 @@ Ever have the issue of spending hours upon hours searching through all of your s
 
 Movie Roulette can help!
 
-Our app asks you for a list of your available streaming services and desired genre(s) and randomly selects a movie for you based on these criteria.
+Our app asks you for a list of your available streaming services and the desired genre, then randomly selects a movie for you based on these criteria.
 
 ## Technologies Used
 
@@ -35,17 +35,17 @@ Next, run:
 npm run start
 ```
 
-This will initiate a webpack build command to bundle the application and subsequently a node command to start the server.
+This will initiate a webpack build command to bundle the application and, subsequently, a node command to start the server.
 
 Finally, open a window to http://localhost:3000 to view the app!
 
 ## How to Use
 
-In order to keep with our promise of saving you time in choosing a movie for night, we have kept the process a simple as possible.
+In order to keep with our promise of saving you time in choosing a movie, we have kept the process a simple as possible.
 
 Please select all streaming services of which you have access/membership to with the tagbox titled "Select all streaming services to search".
 
-Then, select the genre of movie you want to watch with the selector titled "Select movie genre"
+Then, select the genre of movie you want to watch with the selector titled "Select movie genre".
 
 Once all fields have been filed out, click the "Complete" button and a movie will be randomly selected for you and shown below the form!
 
