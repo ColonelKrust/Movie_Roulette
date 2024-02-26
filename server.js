@@ -6,6 +6,7 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, './dist')));
+app.use(express.static(path.join(__dirname, './images')));
 
 /* get all movies that fit the questionaire criteria 
 from streaming-availability-api */
@@ -35,7 +36,7 @@ app.get('/getMovies', (req, res) => {
         'News': '10763',
         'Reality': '10764',
         'Talk Show': '10767'
-    }
+    };
     const inputGenres = genreCodes[req.query.genres];
     let inputParams = {
         services: inputServices,
@@ -69,6 +70,28 @@ app.get('/getMovies', (req, res) => {
 });
 
 //get randomly selected movie poster art (next)
+app.get('/moviePoster', (req, res) => {
+    const movieId = req.query.movieId;
+
+    //call to the configuration API of TMDB
+    axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer ' + process.env.TMDB_API_READ_ACCESS_TOKEN
+        }
+    })
+    .then((response) => {
+        const movieURLandTitle = {
+            title: response.data.title,
+            url: response.data.poster_path
+        };
+
+        res.status(200).send(movieURLandTitle);
+    })
+    .catch((err) => {
+        res.status(err.status).send(err);
+    })
+})
 
 
 app.listen(process.env.PORT, (req, res) => {
