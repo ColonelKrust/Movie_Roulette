@@ -41,8 +41,87 @@ const questions = {
         {
             'name': 'Genre(s)',
             'title': 'Select movie genre',
-            'type': 'dropdown',
-            'choices': [ 'Action', 'Adventure', 'Animation', 'Comedy', 'Drama', 'Documentary', 'Fantasy', 'Family', 'Horror', 'History', 'Mystery', 'Music', 'Romance', 'Science Fiction', 'Thriller', 'War' ],
+            'type': 'tagbox',
+            'choices': [ 
+                {
+                    'text': 'Action',
+                    'value': '28'
+                },
+                {
+                    'text': 'Adventure',
+                    'value': '12'
+                },
+                {
+                    'text': 'Animation',
+                    'value': '16'
+                },
+                {
+                    'text': 'Comedy',
+                    'value': '35'
+                },
+                {
+                    'text': 'Crime',
+                    'value': '80'
+                },
+                {
+                    'text': 'Drama',
+                    'value': '18'
+                },
+                {
+                    'text': 'Documentary',
+                    'value': '99'
+                },
+                {
+                    'text': 'Fantasy',
+                    'value': '14'
+                },
+                {
+                    'text': 'Family',
+                    'value': '10751'
+                },
+                {
+                    'text': 'Horror',
+                    'value': '27'
+                },
+                {
+                    'text': 'History',
+                    'value': '36'
+                },
+                {
+                    'text': 'Mystery',
+                    'value': '9648'
+                },
+                {
+                    'text': 'Music',
+                    'value': '10402'
+                },
+                {
+                    'text': 'Romance',
+                    'value': '10749'
+                },
+                {
+                    'text': 'Science Fiction',
+                    'value': '878'
+                },
+                {
+                    'text': 'Thriller',
+                    'value': '53'
+                },
+                {
+                    'text': 'War',
+                    'value': '10752'
+                },
+                {
+                    'text': 'Western',
+                    'value': '37'
+                }
+                /*  
+                    When TV shows are available, add the following options:
+                    'News': '10763',
+                    'Reality': '10764',
+                    'Talk Show': '10767'
+                */
+            ],
             'isRequired': true
         }
     ],
@@ -54,7 +133,7 @@ function Questionaire (props) {
 
     questionaire.onComplete.add((sender) => {
         const services = sender.data['Streaming services'].join(',')
-        const genres = sender.data['Genre(s)']
+        const genres = sender.data['Genre(s)'].join(',')
 
         axios.get(`/getMovies?services=${services}&genres=${genres}`)
         .then((response) => {
