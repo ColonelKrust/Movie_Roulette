@@ -29,15 +29,15 @@ function RouletteWheel (props) {
                 <div id='wheel'>
                 <img id='moviePoster' src={moviePosterObj.url} alt='poster for chosen movie' />
                 <h2>{movieChoice.title}</h2>
-                <text>{'Year: ' + movieChoice.year}</text>
-                <br></br>
-                <text>{'Overview: ' + movieChoice.overview}</text>
-                <br></br>
-                <text>{'Available on:' + movieChoice.streamingInfo.us.map((service) => {
+                <p>{'Year: ' + movieChoice.year}</p>
+                <br />
+                <p>{'Overview: ' + movieChoice.overview}</p>
+                <br />
+                <p>{'Available on:' + movieChoice.streamingInfo.us.map((service) => {
                     return ' ' + service.service
                 }).filter((service, index, servicesArray) => {
                     return servicesArray.indexOf(service) === index
-                })}</text>
+                })}</p>
                 </div>
             </div>
         )
