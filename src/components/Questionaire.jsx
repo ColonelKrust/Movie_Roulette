@@ -1,6 +1,7 @@
 import React from 'react'
 import { Model, Survey } from 'survey-react-ui'
-import 'survey-core/defaultV2.min.css'
+import 'survey-core/defaultV2.min.css';
+import { DefaultDark } from 'survey-core/themes/default-dark'
 import axios from 'axios'
 
 const questions = {
@@ -122,7 +123,8 @@ const questions = {
                     'Talk Show': '10767'
                 */
             ],
-            'isRequired': true
+            'isRequired': true,
+            'hideSelectedItems': true
         }
     ],
     'showQuestionNumbers': false
@@ -130,6 +132,7 @@ const questions = {
 
 function Questionaire (props) {
     const questionaire = new Model(questions)
+    questionaire.applyTheme(DefaultDark)
 
     questionaire.onComplete.add((sender) => {
         const services = sender.data['Streaming services'].join(',')

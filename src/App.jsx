@@ -2,6 +2,8 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import Questionaire from './components/Questionaire.jsx'
 import RouletteWheel from './components/RouletteWheel.jsx'
+import rouletteImage from '../images/rouletteWheel.png'
+import './styles/appStyle.css'
 
 class App extends React.Component {
   constructor(props){
@@ -23,9 +25,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 id='appTitle'>Movie Roulette</h1>
-        <h3 id='appDesc'>Find what to watch this movie night</h3>
+      <div id='app'>
+        <div id='titleHeader'>
+          <h1 id='appTitle'>Movie Roulette</h1>
+          <img id='rouletteLogo' src={rouletteImage} alt='Roulette wheel image' />
+          <p id='appDesc'>Find what to watch for movie night</p>
+        </div>
         <Questionaire updateMoviesList={(array) => this.updateMoviesList(array)}/>
         <br></br>
         {/* After submission of questionaire, you will be able to "roll the wheel"
