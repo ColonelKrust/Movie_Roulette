@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import genericPoster from '../../images/generic_poster.png'
+import '../styles/wheelStyle.css'
 
 function RouletteWheel (props) { 
     if (props.moviesList.length > 0) {
@@ -27,17 +28,21 @@ function RouletteWheel (props) {
         return (
             <div id='rouletteWheel'>
                 <div id='wheel'>
-                <img id='moviePoster' src={moviePosterObj.url} alt='poster for chosen movie' />
-                <h2>{movieChoice.title}</h2>
-                <p>{'Year: ' + movieChoice.year}</p>
-                <br />
-                <p>{'Overview: ' + movieChoice.overview}</p>
-                <br />
-                <p>{'Available on:' + movieChoice.streamingInfo.us.map((service) => {
-                    return ' ' + service.service
-                }).filter((service, index, servicesArray) => {
-                    return servicesArray.indexOf(service) === index
-                })}</p>
+                    <img id='moviePoster' src={moviePosterObj.url} alt='poster for chosen movie' />
+                    <br />
+                    <div id='movieDescription'>
+                        <h2 id='movieTitle'>{movieChoice.title}</h2>
+                        <p>{'Year: ' + movieChoice.year}</p>
+                        <br />
+                        <p id='overviewLabel'>Overview</p>
+                        <p id='overviewText'>{movieChoice.overview}</p>
+                        <br />
+                        <p>{'Available on:' + movieChoice.streamingInfo.us.map((service) => {
+                            return ' ' + service.service
+                        }).filter((service, index, servicesArray) => {
+                            return servicesArray.indexOf(service) === index
+                        })}</p>
+                    </div>
                 </div>
             </div>
         )

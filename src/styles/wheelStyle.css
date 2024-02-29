@@ -1,0 +1,29 @@
+#moviePoster {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: dotted;
+    border-color: #ff9814;
+    border-width: 8px;
+    outline: 1px solid #eaeaea;
+}
+
+#movieTitle {
+    color: #ff9814;
+}
+
+#movieDescription {
+    background-color: rgba(36, 36, 36, 1);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#overviewLabel {
+    display: inline-block;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #711324;
+}
