@@ -45,9 +45,13 @@ In order to keep with our promise of saving you time in choosing a movie, we hav
 
 Please select all streaming services of which you have access/membership to with the tagbox titled "Select all streaming services to search".
 
-Then, select the genre of movie you want to watch with the selector titled "Select movie genre".
+Then, select the genre (or genres) of movie you want to watch with the selector titled "Select movie genre".
+
+[<image src='./images/titleAndQuestionnaire.png' alt='Shows the top of the screen with app title and questionnaire' width=500px>](./images/titleAndQuestionnaire.png)
 
 Once all fields have been filed out, click the "Complete" button and a movie will be randomly selected for you and shown below the form!
+
+[<image src='./images/randomMovie.png' alt='Shows the top of the screen with app title and questionnaire' width=500px>](./images/randomMovie.png)
 
 # 📽️🎞🍿
 
