@@ -27,3 +27,11 @@
     padding-left: 10px;
     background-color: #711324;
 }
+
+.streamingLogos {
+    max-width: 85px;
+    max-height: 45px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
