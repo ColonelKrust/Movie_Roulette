@@ -3,8 +3,10 @@ import { Model, Survey } from 'survey-react-ui'
 import 'survey-core/defaultV2.min.css';
 import { DefaultDark } from 'survey-core/themes/default-dark'
 import axios from 'axios'
+import '../styles/questionnaireStyle.css'
 
 const questions = {
+    'completedHtml': '<div id="loadingAndMessage"><h3 id="completeMessage">Searching for movie...</h3><br /><div id="loadingWheel" style="width:100%;height:0;padding-bottom:100%;position:relative;max-height:175px;max-width:175px;"><iframe src="https://giphy.com/embed/025d2kASUTzpuw9HaW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div></div>',
     'elements': [
         {
             'name': 'Streaming services',
