@@ -11,17 +11,9 @@ const questions = {
             'title': 'Select all streaming services to search',
             'type': 'tagbox',
             'choices': [
-                { 
-                    'text': 'Netflix',
-                    'value': 'netflix'
-                },
                 {
-                    'text': 'Hulu',
-                    'value': 'hulu.subscription'
-                },
-                {
-                    'text': 'Prime Video',
-                    'value': 'prime.subscription'
+                    'text': 'Apple TV',
+                    'value': 'apple.subscription'
                 },
                 {
                     'text': 'Disney+',
@@ -32,8 +24,24 @@ const questions = {
                     'value': 'hbo'
                 },
                 {
+                    'text': 'Hulu',
+                    'value': 'hulu.subscription'
+                },
+                { 
+                    'text': 'Netflix',
+                    'value': 'netflix'
+                },
+                {
+                    'text': 'Paramount+',
+                    'value': 'paramount.subscription'
+                },
+                {
                     'text': 'Peacock',
                     'value': 'peacock.subscription'
+                },
+                {
+                    'text': 'Prime Video',
+                    'value': 'prime.subscription'
                 }
             ],
             'isRequired': true,

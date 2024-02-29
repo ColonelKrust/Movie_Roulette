@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import genericPoster from '../../images/generic_poster.png'
 import '../styles/wheelStyle.css'
+import ServicesList from './ServicesList.jsx'
 
 function RouletteWheel (props) { 
     if (props.moviesList.length > 0) {
         const movies = props.moviesList
         const movieChoice = props.movieChoice
         const chosenMovieID = movieChoice.tmdbId
+        const streamingServices = movieChoice.streamingInfo.us.map((service) => {
+            return service.service
+        }).filter((service, index, servicesArray) => {
+            return servicesArray.indexOf(service) === index
+        })
         const [ moviePosterObj, setMoviePosterObj ] = useState({
             url: '',
             title: ''
@@ -37,11 +43,8 @@ function RouletteWheel (props) {
                         <p id='overviewLabel'>Overview</p>
                         <p id='overviewText'>{movieChoice.overview}</p>
                         <br />
-                        <p>{'Available on:' + movieChoice.streamingInfo.us.map((service) => {
-                            return ' ' + service.service
-                        }).filter((service, index, servicesArray) => {
-                            return servicesArray.indexOf(service) === index
-                        })}</p>
+                        <p>Available on: </p>
+                        <ServicesList streamingServices={streamingServices} />
                     </div>
                 </div>
             </div>
