@@ -18,7 +18,6 @@ function ServicesList (props) {
     return(
         services.map((service) => {
             const logoURL = baseURL + serviceImageURL[service]
-            console.log(services)
             const altText = 'Streaming service logo for ' + service
             if (serviceImageURL[service]) {
                 return (<img key={service} className='streamingLogos' src={logoURL} alt={altText} />)

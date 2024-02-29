@@ -6,9 +6,9 @@ import ServicesList from './ServicesList.jsx'
 
 function RouletteWheel (props) { 
     if (props.moviesList.length > 0) {
-        const movies = props.moviesList
         const movieChoice = props.movieChoice
         const chosenMovieID = movieChoice.tmdbId
+        let overview = movieChoice.overview
         const streamingServices = movieChoice.streamingInfo.us.map((service) => {
             return service.service
         }).filter((service, index, servicesArray) => {
@@ -16,14 +16,19 @@ function RouletteWheel (props) {
         })
         const [ moviePosterObj, setMoviePosterObj ] = useState({
             url: '',
-            title: ''
+            title: '',
+            overview: ''
         })
 
-        if(movieChoice.title !== moviePosterObj.title) {
+        if (movieChoice.title !== moviePosterObj.title) {
             axios.get(`/moviePoster?movieId=${chosenMovieID}`)
             .then((response) => {
                 console.log('Poster received: ', response.data)
-                setMoviePosterObj({title: response.data.title, url: 'http://image.tmdb.org/t/p/w300' + response.data.url})
+                setMoviePosterObj({
+                    title: response.data.title,
+                    url: 'http://image.tmdb.org/t/p/w300' + response.data.url,
+                    overview: response.data.overview
+                })
             })
             .catch((err) => {
                 console.log('Status Code: ' + err.status + '\n' + err)
@@ -41,7 +46,7 @@ function RouletteWheel (props) {
                         <p>{'Year: ' + movieChoice.year}</p>
                         <br />
                         <p id='overviewLabel'>Overview</p>
-                        <p id='overviewText'>{movieChoice.overview}</p>
+                        <p id='overviewText'>{moviePosterObj.overview}</p>
                         <br />
                         <p>Available on: </p>
                         <ServicesList streamingServices={streamingServices} />

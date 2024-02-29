@@ -60,18 +60,18 @@ app.get('/moviePoster', (req, res) => {
         }
     })
     .then((response) => {
-        const movieURLandTitle = {
+        const movieDataObj = {
             title: response.data.title,
-            url: response.data.poster_path
+            url: response.data.poster_path,
+            overview: response.data.overview
         };
 
-        res.status(200).send(movieURLandTitle);
+        res.status(200).send(movieDataObj);
     })
     .catch((err) => {
         res.status(err.status).send(err);
-    })
-})
-
+    });
+});
 
 app.listen(process.env.PORT, (req, res) => {
     console.log(`Listening on port ${process.env.PORT}`);
