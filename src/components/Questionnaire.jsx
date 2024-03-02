@@ -140,7 +140,7 @@ const questions = {
     'showQuestionNumbers': false
 }
 
-function Questionaire (props) {
+function Questionnaire (props) {
     const questionaire = new Model(questions)
     questionaire.applyTheme(DefaultDark)
 
@@ -162,4 +162,4 @@ function Questionaire (props) {
     return (<Survey model={questionaire} />)
 }
 
-export default Questionaire
+export default Questionnaire
