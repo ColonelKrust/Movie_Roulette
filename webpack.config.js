@@ -10,7 +10,7 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
@@ -27,7 +27,7 @@ const config = {
         rules: [
             {
                 test: /\.(js|jsx)$/i,
-                exclude: /node_modules/,
+                exclude: [/node_modules/, /tests/],
                 use: {
                     loader: 'babel-loader',
                     options: {

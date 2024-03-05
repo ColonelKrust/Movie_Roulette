@@ -1,11 +1,14 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, cleanup } from '@testing-library/react'
 import App from '../src/components/App.jsx'
+import { afterEach } from 'node:test';
 
-describe('Main App component', () => {
+afterEach(cleanup);
+
+describe('Main App component tests', () => {
     test('Should render app div', () => {
         render(<App />, );
-        const appDiv = document.getElementById('appComponent');
+        const appDiv = screen.getByTestId('appComponent');
         expect(appDiv).toBeTruthy();
     });
 });

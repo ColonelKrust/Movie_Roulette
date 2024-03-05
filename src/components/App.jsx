@@ -24,7 +24,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='appComponent'>
+      <div data-testid='appComponent' id='appComponent'>
         <div id='titleHeader'>
           <h1 id='appTitle'>Movie Roulette</h1>
           <img id='rouletteLogo' src={rouletteImage} alt='Roulette wheel image' />
