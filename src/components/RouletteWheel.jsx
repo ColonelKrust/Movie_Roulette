@@ -37,7 +37,7 @@ function RouletteWheel (props) {
         }
 
         return (
-            <div id='rouletteWheel'>
+            <div data-testid='WheelComponent' id='rouletteWheel'>
                 <div id='wheel'>
                     <img id='moviePoster' src={moviePosterObj.url} alt='poster for chosen movie' />
                     <br />
