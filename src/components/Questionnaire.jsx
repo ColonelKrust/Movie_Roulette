@@ -150,7 +150,6 @@ function Questionnaire (props) {
 
         axios.get(`/getMovies?services=${services}&genres=${genres}`)
         .then((response) => {
-            console.log('Success!');
             //function from App through props to update movies list
             props.updateMoviesList(response.data)
         })
