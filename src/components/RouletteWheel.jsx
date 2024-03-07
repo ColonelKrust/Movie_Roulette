@@ -23,7 +23,6 @@ function RouletteWheel (props) {
         if (movieChoice.title !== moviePosterObj.title) {
             axios.get(`/moviePoster?movieId=${chosenMovieID}`)
             .then((response) => {
-                console.log('Poster received: ', response.data)
                 setMoviePosterObj({
                     title: response.data.title,
                     url: 'http://image.tmdb.org/t/p/w300' + response.data.url,
