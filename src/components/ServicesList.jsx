@@ -20,9 +20,9 @@ function ServicesList (props) {
             const logoURL = baseURL + serviceImageURL[service]
             const altText = 'Streaming service logo for ' + service
             if (serviceImageURL[service]) {
-                return (<img key={service} className='streamingLogos' src={logoURL} alt={altText} />)
+                return (<img key={service} data-testid='serviceImg' className='streamingLogos' src={logoURL} alt={altText} />)
             } else {
-                return (<p className='serviceNoLogo'>{service}</p>)
+                return (<p key={service} data-testid='serviceNoImg' className='serviceNoLogo'>{service}</p>)
             }
         })
     )
