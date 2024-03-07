@@ -61,16 +61,25 @@ describe('RouletteWheel Tests', () => {
                     }
                 ]
         };
+        const mockAxiosMoviePoster = {
+            data: {
+                "title": "The Marvels",
+                "url": "/9GBhzXMFjgcZ3FdR9w3bUMMTps5.jpg",
+                "overview": "Carol Danvers, aka Captain Marvel, has reclaimed her identity from the tyrannical Kree and taken revenge on the Supreme Intelligence. But unintended consequences see Carol shouldering the burden of a destabilized universe. When her duties send her to an anomalous wormhole linked to a Kree revolutionary, her powers become entangled with that of Jersey City super-fan Kamala Khan, aka Ms. Marvel, and Carol’s estranged niece, now S.A.B.E.R. astronaut Captain Monica Rambeau. Together, this unlikely trio must team up and learn to work in concert to save the universe."
+            }
+        }
         const user = userEvent.setup();
         let fields;
         let option1;
         let option2;
-        const spy = jest.spyOn(axios, 'get').mockResolvedValueOnce(mockAxiosMoviesList);
+        const spy = jest.spyOn(axios, 'get')
+        .mockResolvedValueOnce(mockAxiosMoviesList)
+        .mockResolvedValueOnce(mockAxiosMoviePoster);
 
         render(<App />);
 
         fields = screen.getAllByRole('combobox');
-        option1 = screen.getByText('Hulu');
+        option1 = screen.getByText('Disney+');
         option2 = screen.getByText('Action');
         
         //Choose "Hulu" option in "Select all streaming services to search" selector
