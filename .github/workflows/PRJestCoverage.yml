@@ -6,6 +6,8 @@ on:
 jobs:
     coverage:
         permissions:
+          contents: write
+          checks: write
           pull-requests: write
         runs-on: ubuntu-latest
         steps:
