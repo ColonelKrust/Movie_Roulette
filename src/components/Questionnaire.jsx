@@ -148,7 +148,7 @@ function Questionnaire (props) {
         const services = sender.data['Streaming services'].join(',')
         const genres = sender.data['Genre(s)'].join(',')
 
-        axios.get(`/getMovies?services=${services}&genres=${genres}`)
+        axios.get(`/movies?services=${services}&genres=${genres}`)
         .then((response) => {
             //function from App through props to update movies list
             props.updateMoviesList(response.data)

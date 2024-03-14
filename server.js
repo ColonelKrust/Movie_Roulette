@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, './images')));
 /* get all movies that fit the questionaire criteria 
 from streaming-availability-api */
 
-app.get('/getMovies', (req, res) => {
+app.get('/movies', (req, res) => {
     const inputServices = req.query.services;
     const inputCountry = req.query.country || 'us';
     const inputGenres = req.query.genres;
