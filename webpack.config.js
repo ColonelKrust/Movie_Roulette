@@ -25,14 +25,14 @@ const config = {
             test: /\.js$|\.css$|\.html$/,
             threshold: 10240,
             minRatio: 0.8
-          }),
-          new CompressionPlugin({
+        }),
+        new CompressionPlugin({
             filename: "[path][base].br",
             algorithm: "brotliCompress",
             test: /\.(js|css|html|svg)$/,
             threshold: 10240,
             minRatio: 0.8
-          })
+        })
     ],
     module: {
         rules: [
