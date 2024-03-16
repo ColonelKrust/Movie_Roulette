@@ -21,7 +21,7 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "start": "webpack --watch & nodemon server.js"
+    "start": "webpack --watch & node server.js"
   },
   "author": "Dakota Lust",
   "license": "ISC",
