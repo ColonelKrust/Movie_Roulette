@@ -11,3 +11,21 @@
 #loadingAndMessage {
     display: inline-block;
 }
+
+@media screen
+    and (max-device-width: 640px) {
+        .sd-root-modern {
+            --sjs-base-unit: 12px !important;
+        }
+
+        .sv-popup__body-footer-item,
+        .sv-list__input, 
+        .sv-list__item-body {
+            font-size: 25px !important;
+        }
+
+        .sv-list__item-body {
+            text-align: center;
+            margin-top: 25px;
+        }
+    }

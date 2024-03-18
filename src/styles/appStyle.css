@@ -14,7 +14,8 @@ p {
 }
 
 #appDesc {
-    padding-left: 15px;
+    font-size: 15px;
+    padding-left: 35px;
     position: relative;
     bottom: 25px;
     text-shadow: 1px 1px 2px black;
@@ -41,7 +42,7 @@ p {
 
 #titleHeader {
     background-color: #711324;
-    width: 100%;
+    width: 99.5%;
     height: 125px;
     border-radius: 10px;
     border-style: double;
