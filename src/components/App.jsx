@@ -28,7 +28,7 @@ class App extends React.Component {
         <div id='titleHeader'>
           <h1 id='appTitle'>Movie Roulette</h1>
           <img id='rouletteLogo' src={rouletteImage} alt='Roulette wheel image' />
-          <p id='appDesc'>Find what to watch for movie night</p>
+          <p id='appDesc'>Put a spin on movie night</p>
         </div>
         <Questionnaire updateMoviesList={(array) => this.updateMoviesList(array)}/>
         <br></br>

@@ -48,7 +48,9 @@ function RouletteWheel (props) {
                         <p id='overviewText'>{moviePosterObj.overview}</p>
                         <br />
                         <p>Available on: </p>
+                        <div id='servicesList'>
                         <ServicesList streamingServices={streamingServices} />
+                        </div>
                     </div>
                 </div>
             </div>
