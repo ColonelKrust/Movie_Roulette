@@ -11,8 +11,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       moviesList: [],
-      chosenMovie: {},
-      show: false
+      chosenMovie: {}
     }
 
     this.updateMoviesList = this.updateMoviesList.bind(this)
