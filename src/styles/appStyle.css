@@ -41,6 +41,7 @@ p {
 }
 
 #titleHeader {
+    display: block;
     background-color: #711324;
     width: 99.5%;
     height: 125px;
@@ -49,3 +50,34 @@ p {
     border-width: 2px;
     border-color: #ff9814;
 }
+
+#sidebarButton {
+    position: relative;
+    float: right;
+    right: 25px;
+    bottom: 110px;
+    background-color: transparent;
+    border: none;
+}
+
+@media screen
+    and (max-device-width: 460px) {
+        #appTitle {
+            font-size: 24px;
+        }
+
+        #rouletteLogo {
+            padding-left: 0px;
+        }
+
+        #appDesc {
+            padding-left: 25px;
+        }
+    }
+
+@media screen
+    and (max-device-width: 480px) {
+        #sidebarButton {
+            right: 10px;
+        }
+    }
