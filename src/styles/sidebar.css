@@ -17,7 +17,7 @@
 
 #sidebarOuter {
     right: -100%;
-    transition: ease-in-out all 0.5s;
+    transition: ease-in-out all 0.6s;
     width: 188px;
     float: right;
 }

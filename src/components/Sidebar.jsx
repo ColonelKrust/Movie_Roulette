@@ -6,8 +6,8 @@ import '../styles/sidebar.css'
 function Sidebar (props) {
     return (
         <div id='sidebarOuter'>
-            <div id='sidebar'>
-                <button id='closeSidebarButton' onClick={props.onHide}><ArrowBarRight size={30}/></button>
+            <div data-testid='sidebarComponent' id='sidebar'>
+                <button data-testid='closeSidebarButton' id='closeSidebarButton' onClick={props.onHide}><ArrowBarRight size={30}/></button>
                 <div id='sidebarHeader'>
                     <img id='sidebarLogo' src={rouletteImage} alt='Roulette wheel image' />
                 </div>

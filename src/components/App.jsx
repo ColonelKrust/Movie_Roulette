@@ -41,9 +41,9 @@ class App extends React.Component {
           <h1 id='appTitle'>Movie Roulette</h1>
           <img id='rouletteLogo' src={rouletteImage} alt='Roulette wheel image' />
           <p id='appDesc'>Put a spin on movie night</p>
-          <button id='sidebarButton' onClick={this.showSidebar}><List size={40} color='#eaeaea'/></button>
+          <button data-testid='sidebarButton' id='sidebarButton' onClick={this.showSidebar}><List size={40} color='#eaeaea'/></button>
         </div>
-        <Sidebar show={this.state.show} onHide={this.hideSidebar} />
+        <Sidebar onHide={this.hideSidebar} />
         <Questionnaire updateMoviesList={(array) => this.updateMoviesList(array)}/>
         <br></br>
         <RouletteWheel moviesList={this.state.moviesList} movieChoice={this.state.chosenMovie} />
