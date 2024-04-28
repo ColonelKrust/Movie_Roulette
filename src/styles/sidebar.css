@@ -1,0 +1,56 @@
+#sidebar {
+    position: fixed;
+    z-index: 1;
+    width: 250px;
+    height: 100vh;
+    top: 0px;
+    right: -100%;
+    transition: ease-in-out all 0.6s;
+    background-color: #303030;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+#sidebar.show {
+    right: 0%;
+}
+
+#sidebarOuter {
+    right: -100%;
+    transition: ease-in-out all 0.6s;
+    width: 188px;
+    float: right;
+}
+
+#sidebarLogo {
+    width: 64px;
+    position: relative;
+    left: 90px;
+    bottom: 5px;
+}
+
+#loginButton {
+    font-family: Avenir;
+    font-size: 15px;
+    border-color: #711324;
+    border-radius: 8px;
+    padding: 22px;
+    width: 100%;
+    background-color: #eaeaea;
+    border-width: 10px;
+    position: relative;
+    top: 34px;
+    visibility: hidden;
+}
+
+#sidebarBody {
+    text-align: center;
+}
+
+#closeSidebarButton {
+    background-color: transparent;
+    border: none;
+    color: #eaeaea;
+    position: relative;
+    top: 22px;
+}

@@ -9,7 +9,7 @@ afterEach(cleanup)
 
 describe('Quesionnaire tests', () => {
     test('Questionnaire should render successfully', () => {
-        render(<Questionnaire />, );
+        render(<Questionnaire />);
         const questionnaireDiv = document.querySelector('.sd-body');
         expect(questionnaireDiv).toBeTruthy();
     });
@@ -23,7 +23,7 @@ describe('Quesionnaire tests', () => {
         let fields;
         let option1;
         let option2;
-        const spy = jest.spyOn(axios, 'get').mockResolvedValueOnce(mAxiosResponse);
+        const spyAxios = jest.spyOn(axios, 'get').mockResolvedValueOnce(mAxiosResponse);
 
         render(<Questionnaire updateMoviesList={updateMoviesListMock}/>);
 
@@ -55,7 +55,7 @@ describe('Quesionnaire tests', () => {
             console.log('Complete Button clicked!');
         });
 
-        await waitFor(() => expect(spy).toBeCalled(), { timeout: 5000 });
+        await waitFor(() => expect(spyAxios).toBeCalled(), { timeout: 5000 });
         await waitFor(() => expect(updateMoviesListMock).toBeCalled(), { timeout: 5000 });
     });
 

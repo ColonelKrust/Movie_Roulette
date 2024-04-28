@@ -10,6 +10,7 @@
     "nodemon": "^3.0.3",
     "npm": "^9.8.1",
     "react": "^18.2.0",
+    "react-bootstrap-icons": "^1.11.4",
     "react-dom": "^18.2.0",
     "survey-react-ui": "^1.9.129"
   },
@@ -32,6 +33,7 @@
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
+    "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
     "@webpack-cli/generators": "^3.0.7",

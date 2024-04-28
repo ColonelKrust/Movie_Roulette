@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import { render, screen, cleanup, waitFor } from '@testing-library/react'
 import App from '../src/components/App.jsx'
-import RouletteWheel from '../src/components/RouletteWheel.jsx'
 import { afterEach } from 'node:test'
 import userEvent from '@testing-library/user-event'
 
